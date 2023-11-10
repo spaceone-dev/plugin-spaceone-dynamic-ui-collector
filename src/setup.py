@@ -21,7 +21,7 @@ with open('VERSION', 'r') as f:
     f.close()
 
 setup(
-    name='plugin-spaceone-inven-collector',
+    name='plugin-spaceone-dynamic-ui-collector',
     version=VERSION,
     description='Collector plugin for SpaceONE company',
     long_description='',
@@ -35,5 +35,10 @@ setup(
         'spaceone-api',
         'spaceone-inventory'
     ],
+    package_data={
+        'plugin': [
+            'metadata/dynamic_ui/*.yaml'
+        ]
+    },
     zip_safe=False,
 )
