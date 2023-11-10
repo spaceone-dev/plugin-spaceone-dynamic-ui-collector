@@ -1,1 +1,1 @@
-# plugin-dynamic-ui-collector
+# plugin-spaceone-dynamic-ui-collector
