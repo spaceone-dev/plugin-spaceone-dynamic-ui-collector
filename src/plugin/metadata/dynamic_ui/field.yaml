@@ -48,7 +48,7 @@ tabs.1:
         - Enum Field: data.enum
     - key: data.part
       name: Dynamic View 2
-      type: simple-table
+      type: item
       fields:
         - Field ID: data.field
         - Text Field: data.text
