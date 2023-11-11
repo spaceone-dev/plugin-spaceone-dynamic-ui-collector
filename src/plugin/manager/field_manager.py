@@ -19,16 +19,6 @@ class FieldManager(BaseManager):
     def collect_resources(self, options, secret_data, schema):
         try:
             yield from self.collect_cloud_service_type(options, secret_data, schema)
-        except Exception as e:
-            yield make_error_response(
-                error=e,
-                provider=self.provider,
-                cloud_service_group=self.cloud_service_group,
-                cloud_service_type=self.cloud_service_type,
-                resource_type='inventory.CloudServiceType',
-            )
-
-        try:
             yield from self.collect_cloud_service(options, secret_data, schema)
         except Exception as e:
             yield make_error_response(
@@ -43,7 +33,9 @@ class FieldManager(BaseManager):
             name=self.cloud_service_type,
             group=self.cloud_service_group,
             provider=self.provider,
-            metadata_path=self.metadata_path
+            metadata_path=self.metadata_path,
+            is_primary=True,
+            is_major=True
         )
 
         yield make_response(
