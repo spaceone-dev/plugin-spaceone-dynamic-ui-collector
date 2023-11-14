@@ -3,11 +3,10 @@ search:
   fields:
     - Field ID: data.field
     - Text Field: data.text
+      type: text
     - State Field: data.state
-    - Badge Field: data.badge
-    - Datetime Field: data.datetime
-    - Image Field: data.image
-    - Enum Field: data.enum
+      type: state
+      icon_image: ic_arrow-up-bold
 table:
   sort:
     key: data.field
@@ -15,22 +14,79 @@ table:
   fields:
     - Field ID: data.field
     - Text Field: data.text
+      type: text
     - State Field: data.state
+      type: state
+      icon_image: ic_arrow-up-bold
     - Badge Field: data.badge
+      type: badge
+      outline_color: yellow.500
+      shape: ROUND
+    - Dict Field: data.dict
+      type: dict
     - Datetime Field: data.datetime
+      type: datetime
+      source_type: iso8601
     - Image Field: data.image
+      type: image
+      width: 100
+      height: 100
+      image_url: https://img.freepik.com/premium-photo/wonderful-scenery-background-image_792335-10.jpg
     - Enum Field: data.enum
+      type: enum
+      enums:
+        - RUNNING: green.500
+        - STOPPED: red.500
+    - Size Field: data.size
+      type: size
+      display_unit: GB
+      source_unit: GB
+    - Progress Field: data.progress
+      type: progress
+      unit: 10
 tabs.0:
   name: Tap 1
   type: item
   fields:
     - Field ID: data.field
     - Text Field: data.text
+      type: text
     - State Field: data.state
+      type: state
+      icon_image: ic_arrow-up-bold
     - Badge Field: data.badge
+      type: badge
+      outline_color: yellow.500
+      shape: ROUND
+    - Dict Field: data.dict
+      type: dict
     - Datetime Field: data.datetime
+      type: datetime
+      source_type: iso8601
+      source_format: "%Y-%m-%d %H:%M:%S"
+      display_format: "%Y-%m-%d %H:%M:%S"
     - Image Field: data.image
+      type: image
+      width: 100
+      height: 100
+      image_url: https://img.freepik.com/premium-photo/wonderful-scenery-background-image_792335-10.jpg
     - Enum Field: data.enum
+      type: enum
+      enums:
+        - RUNNING: green.500
+        - STOPPED: red.500
+    - Size Field: data.size
+      type: size
+      display_unit: GB
+      source_unit: GB
+    - Progress Field: data.progress
+      type: progress
+      unit: 10
+    - More Field: data.display.button
+      type: more
+      popup_key: data.more.code
+      popup_name: "TEST Sample"
+      popup_type: raw
 tabs.1:
   name: Tap 2
   type: list
@@ -41,19 +97,125 @@ tabs.1:
       fields:
         - Field ID: data.field
         - Text Field: data.text
+          type: text
         - State Field: data.state
+          type: state
+          icon_image: ic_arrow-up-bold
         - Badge Field: data.badge
-        - Datetime Field: data.datetime
-        - Image Field: data.image
-        - Enum Field: data.enum
-    - key: data.part
+          type: badge
+          outline_color: yellow.500
+          shape: ROUND
+        - Dict Field: data.dict
+          type: dict
+    - key: data.member_id
       name: Dynamic View 2
       type: item
       fields:
-        - Field ID: data.field
-        - Text Field: data.text
-        - State Field: data.state
-        - Badge Field: data.badge
         - Datetime Field: data.datetime
+          type: datetime
+          source_type: iso8601
+          source_format: "%Y-%m-%d %H:%M:%S"
+          display_format: "%Y-%m-%d %H:%M:%S"
         - Image Field: data.image
+          type: image
+          width: 100
+          height: 100
+          image_url: https://img.freepik.com/premium-photo/wonderful-scenery-background-image_792335-10.jpg
         - Enum Field: data.enum
+          type: enum
+          enums:
+            - RUNNING: green.500
+            - STOPPED: red.500
+        - Size Field: data.size
+          type: size
+          display_unit: GB
+          source_unit: GB
+        - Progress Field: data.progress
+          type: progress
+          unit: 10
+        - More Field: data.display.button
+          type: more
+          popup_key: data.more.code
+          popup_name: "TEST Sample"
+          popup_type: raw
+tabs.2:
+  name: Tap 3
+  type: list
+  items:
+    - name: Dynamic View 1
+      key: data.member_id
+      type: item
+      fields:
+        - State Field1: data.state
+          type: state
+          icon_image: ic_arrow-up-bold
+        - State Field2: data.state
+          type: state
+          icon_image: ic_arrow-up-bold
+          icon_color: green.500
+        - State Field3: data.state
+          type: state
+          icon_image: ic_arrow-up-bold
+        - State Field4: data.state
+          type: state
+          text_color: green.500
+        - State Field5: data.state1
+          type: state
+          text_color: yellow.500
+          icon_image: ic_arrow-up-bold
+          icon_color: green.500
+    - name: Dynamic View 2
+      key: data.member_id
+      type: item
+      fields:
+        - Badge Field1: data.badge
+          type: badge
+        - Badge Field2: data.badge
+          type: badge
+          outline_color: yellow.500
+          shape: SQUARE
+        - Badge Field3: data.badge
+          type: badge
+          background_color: gray.500
+          shape: ROUND
+        - Badge Field4: data.badge
+          type: badge
+          outline_color: yellow.500
+          text_color: green.500
+          background_color: gray.500
+          shape: ROUND
+        - Badge Field5: data.badge
+          type: badge
+          text_color: green.500
+          shape: SQUARE
+    - name: Dynamic View 3
+      key: data.member_id
+      type: table
+      fields:
+        - Datetime Field: data.datetime
+          type: datetime
+          source_type: iso8601
+          source_format: "%Y-%m-%d %H:%M:%S"
+          display_format: "%Y-%m-%d %H:%M:%S"
+        - Image Field: data.image
+          type: image
+          width: 100
+          height: 100
+          image_url: https://img.freepik.com/premium-photo/wonderful-scenery-background-image_792335-10.jpg
+        - Enum Field: data.enum
+          type: enum
+          enums:
+            - RUNNING: green.500
+            - STOPPED: red.500
+        - Size Field: data.size
+          type: size
+          display_unit: GB
+          source_unit: GB
+        - Progress Field: data.progress
+          type: progress
+          unit: 10
+        - More Field: data.display.button
+          type: more
+          popup_key: data.more.code
+          popup_name: "TEST Sample"
+          popup_type: raw
