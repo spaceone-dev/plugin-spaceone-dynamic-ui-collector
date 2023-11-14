@@ -3,18 +3,17 @@ from spaceone.core.manager import BaseManager
 from spaceone.inventory.plugin.collector.lib import *
 from ..connector.field_connector import FieldConnector
 
-_LOGGER = logging.getLogger('cloudforet')
+_LOGGER = logging.getLogger("cloudforet")
 
 
 class FieldManager(BaseManager):
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.cloud_service_group = 'DynamicUI'
-        self.cloud_service_type = 'Field'
-        self.provider = 'spaceone_company'
-        self.metadata_path = 'plugin/metadata/dynamic_ui/field.yaml'
+        self.cloud_service_group = "DynamicUI"
+        self.cloud_service_type = "Field"
+        self.provider = "spaceone_company"
+        self.metadata_path = "plugin/metadata/dynamic_ui/field.yaml"
 
     def collect_resources(self, options, secret_data, schema):
         try:
@@ -35,27 +34,27 @@ class FieldManager(BaseManager):
             provider=self.provider,
             metadata_path=self.metadata_path,
             is_primary=True,
-            is_major=True
+            is_major=True,
         )
 
         yield make_response(
             cloud_service_type=cloud_service_type,
-            match_keys=[['name', 'reference.resource_id', 'account', 'provider']],
-            resource_type='inventory.CloudServiceType'
+            match_keys=[["name", "reference.resource_id", "account", "provider"]],
+            resource_type="inventory.CloudServiceType",
         )
 
     def collect_cloud_service(self, options, secret_data, schema):
         field_connector = FieldConnector()
         field_items = field_connector.list_fields()
-        for item in field_items:
+        for field in field_items:
             cloud_service = make_cloud_service(
-                name=self.cloud_service_type,
+                name=field["name"],
                 cloud_service_type=self.cloud_service_type,
                 cloud_service_group=self.cloud_service_group,
                 provider=self.provider,
-                data=item
+                data=field,
             )
             yield make_response(
                 cloud_service=cloud_service,
-                match_keys=[['name', 'reference.resource_id', 'account', 'provider']]
+                match_keys=[["name", "reference.resource_id", "account", "provider"]],
             )
