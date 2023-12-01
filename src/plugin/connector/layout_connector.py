@@ -4,7 +4,7 @@ from spaceone.core.connector import BaseConnector
 _LOGGER = logging.getLogger(__name__)
 
 
-class FieldConnector(BaseConnector):
+class LayoutConnector(BaseConnector):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 

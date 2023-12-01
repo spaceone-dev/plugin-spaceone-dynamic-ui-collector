@@ -1,221 +1,277 @@
 ---
+default:
+  cloud_service_group: DynamicUI
+  cloud_service_type: Field
+
 search:
   fields:
     - Field ID: data.field
-    - Text Field: data.text
+    - Text Field: data.text_example.text1
       type: text
     - State Field: data.state
       type: state
       icon_image: ic_arrow-up-bold
+
 table:
   sort:
     key: data.field
     desc: true
   fields:
     - Field ID: data.field
-    - Text Field: data.text
+    - Text Field: data.text.text1
       type: text
-    - State Field: data.state
+    - Enum Field: data.enum.enum1
+      type: enum
+      enums:
+        - RUNNING: green.500
+        - STOPPED: red.500
+    - State Field: data.state.state1
       type: state
       icon_image: ic_arrow-up-bold
-    - Badge Field: data.badge
+    - Badge Field: data.badge.badge1
       type: badge
       outline_color: yellow.500
       shape: ROUND
     - Dict Field: data.dict
       type: dict
-    - Datetime Field: data.datetime
+    - Datetime Field: data.datetime.datetime1
       type: datetime
       source_type: iso8601
-    - Image Field: data.image
-      type: image
-      width: 100
-      height: 100
-      image_url: https://img.freepik.com/premium-photo/wonderful-scenery-background-image_792335-10.jpg
-    - Enum Field: data.enum
-      type: enum
-      enums:
-        - RUNNING: green.500
-        - STOPPED: red.500
     - Size Field: data.size
       type: size
       display_unit: GB
       source_unit: GB
-    - Progress Field: data.progress
-      type: progress
-      unit: 10
+
 tabs.0:
-  name: Tap 1
-  type: item
-  fields:
-    - Field ID: data.field
-    - Text Field: data.text
-      type: text
-    - State Field: data.state
-      type: state
-      icon_image: ic_arrow-up-bold
-    - Badge Field: data.badge
-      type: badge
-      outline_color: yellow.500
-      shape: ROUND
-    - Dict Field: data.dict
-      type: dict
-    - Datetime Field: data.datetime
-      type: datetime
-      source_type: iso8601
-      source_format: "%Y-%m-%d %H:%M:%S"
-      display_format: "%Y-%m-%d %H:%M:%S"
-    - Image Field: data.image
-      type: image
-      width: 100
-      height: 100
-      image_url: https://img.freepik.com/premium-photo/wonderful-scenery-background-image_792335-10.jpg
-    - Enum Field: data.enum
-      type: enum
-      enums:
-        - RUNNING: green.500
-        - STOPPED: red.500
-    - Size Field: data.size
-      type: size
-      display_unit: GB
-      source_unit: GB
-    - Progress Field: data.progress
-      type: progress
-      unit: 10
-    - More Field: data.display.button
-      type: more
-      popup_key: data.more.code
-      popup_name: "TEST Sample"
-      popup_type: raw
-tabs.1:
-  name: Tap 2
+  name: Text Fields
   type: list
   items:
-    - key: data.member_id
-      name: Dynamic View 1
+    - name: Examples
       type: item
       fields:
-        - Field ID: data.field
-        - Text Field: data.text
+        - Text Example 1: data.text.text1
+        - Text Example 2: data.text.text2
           type: text
-        - State Field: data.state
-          type: state
-          icon_image: ic_arrow-up-bold
-        - Badge Field: data.badge
-          type: badge
-          outline_color: yellow.500
-          shape: ROUND
-        - Dict Field: data.dict
-          type: dict
-    - key: data.member_id
-      name: Dynamic View 2
-      type: item
-      fields:
-        - Datetime Field: data.datetime
-          type: datetime
-          source_type: iso8601
-          source_format: "%Y-%m-%d %H:%M:%S"
-          display_format: "%Y-%m-%d %H:%M:%S"
-        - Image Field: data.image
-          type: image
-          width: 100
-          height: 100
-          image_url: https://img.freepik.com/premium-photo/wonderful-scenery-background-image_792335-10.jpg
-        - Enum Field: data.enum
-          type: enum
-          enums:
-            - RUNNING: green.500
-            - STOPPED: red.500
-        - Size Field: data.size
-          type: size
-          display_unit: GB
-          source_unit: GB
-        - Progress Field: data.progress
-          type: progress
-          unit: 10
-        - More Field: data.display.button
-          type: more
-          popup_key: data.more.code
-          popup_name: "TEST Sample"
-          popup_type: raw
-tabs.2:
-  name: Tap 3
+        - name: Text Example 3
+          key: data.text.text3
+          type: text
+    - name: Data
+      type: raw
+      root_path: data.text_example.data
+    - name: Yaml
+      type: raw
+      root_path: data.text_example.yaml
+
+tabs.1:
+  name: Enum Fields
   type: list
   items:
-    - name: Dynamic View 1
-      key: data.member_id
+    - name: Examples
       type: item
       fields:
-        - State Field1: data.state
-          type: state
-          icon_image: ic_arrow-up-bold
-        - State Field2: data.state
-          type: state
-          icon_image: ic_arrow-up-bold
-          icon_color: green.500
-        - State Field3: data.state
-          type: state
-          icon_image: ic_arrow-up-bold
-        - State Field4: data.state
-          type: state
-          text_color: green.500
-        - State Field5: data.state1
-          type: state
-          text_color: yellow.500
-          icon_image: ic_arrow-up-bold
-          icon_color: green.500
-    - name: Dynamic View 2
-      key: data.member_id
-      type: item
-      fields:
-        - Badge Field1: data.badge
-          type: badge
-        - Badge Field2: data.badge
-          type: badge
-          outline_color: yellow.500
-          shape: SQUARE
-        - Badge Field3: data.badge
-          type: badge
-          background_color: gray.500
-          shape: ROUND
-        - Badge Field4: data.badge
-          type: badge
-          outline_color: yellow.500
-          text_color: green.500
-          background_color: gray.500
-          shape: ROUND
-        - Badge Field5: data.badge
-          type: badge
-          text_color: green.500
-          shape: SQUARE
-    - name: Dynamic View 3
-      key: data.member_id
-      type: table
-      fields:
-        - Datetime Field: data.datetime
-          type: datetime
-          source_type: iso8601
-          source_format: "%Y-%m-%d %H:%M:%S"
-          display_format: "%Y-%m-%d %H:%M:%S"
-        - Image Field: data.image
-          type: image
-          width: 100
-          height: 100
-          image_url: https://img.freepik.com/premium-photo/wonderful-scenery-background-image_792335-10.jpg
-        - Enum Field: data.enum
+        - Enum Example 1: data.enum.enum1
           type: enum
           enums:
             - RUNNING: green.500
             - STOPPED: red.500
-        - Size Field: data.size
+            - PAUSED: yellow.500
+        - name: Enum Example 2
+          key: data.enum.enum2
+          type: enum
+          enums:
+            - RUNNING: green.500
+            - STOPPED: red.500
+              type: badge
+              shape: SQUARE
+              background_color: gray.500
+            - PAUSED: yellow.500
+              icon_image: ic_arrow-up-bold
+              type: state
+        - Enum Example 3: data.enum.enum3
+          type: enum
+          enums:
+            - RUNNING: green.500
+            - STOPPED: red.500
+              type: badge
+              shape: SQUARE
+              background_color: gray.500
+            - PAUSED: yellow.500
+              icon_image: ic_arrow-up-bold
+              type: state
+    - name: Data
+      type: raw
+      root_path: data.enum_example.data
+    - name: Yaml
+      type: raw
+      root_path: data.enum_example.yaml
+
+tabs.2:
+  name: Dict Fields
+  type: list
+  items:
+    - name: Examples
+      type: item
+      fields:
+        - Dict Example: data.dict
+          type: dict
+    - name: Data
+      type: raw
+      root_path: data.dict_example.data
+    - name: Yaml
+      type: raw
+      root_path: data.dict_example.yaml
+
+tabs.3:
+  name: Size Fields
+  type: list
+  items:
+    - name: Examples
+      type: item
+      fields:
+        - Size Example 1: data.size.size1
           type: size
           display_unit: GB
           source_unit: GB
-        - Progress Field: data.progress
-          type: progress
-          unit: 10
-        - More Field: data.display.button
+        - Size Example 2: data.size.size2
+          type: size
+          display_unit: MB
+          source_unit: GB
+    - name: Data
+      type: raw
+      root_path: data.size_example.data
+    - name: Yaml
+      type: raw
+      root_path: data.size_example.yaml
+
+tabs.4:
+  name: Datetime Fields
+  type: list
+  items:
+    - name: Examples
+      type: item
+      fields:
+        - Datetime Example 1: data.datetime.datetime1
+          type: datetime
+        - Datetime Example 2: data.datetime.datetime2
+          type: datetime
+          source_type: iso8601
+          display_format: YYYY-MM-DD
+        - Datetime Example 3: data.datetime.datetime3
+          type: datetime
+          source_type: timestamp
+          source_format: seconds
+    - name: Data
+      type: raw
+      root_path: data.datetime_example.data
+    - name: Yaml
+      type: raw
+      root_path: data.datetime_example.yaml
+
+tabs.5:
+  name: Badge Fields
+  type: list
+  items:
+    - name: Examples
+      type: item
+      fields:
+        - Badge Example 1: data.badge.badge1
+          type: badge
+        - Badge Example 2: data.badge.badge2
+          type: badge
+          outline_color: yellow.500
+        - Badge Example 3: data.badge.badge3
+          type: badge
+          outline_color: blue.500
+          shape: SQUARE
+        - Badge Example 4: data.badge.badge4
+          type: badge
+          text_color: blue.500
+        - Badge Example 5: data.badge.badge5
+          type: badge
+          background_color: blue.500
+          text_color: yellow.500
+        - Badge Example 6: data.badge.badge6
+          type: badge
+          outline_color: blue.500
+          text_color: yellow.500
+          shape: SQUARE
+    - name: Data
+      type: raw
+      root_path: data.badge_example.data
+    - name: Yaml
+      type: raw
+      root_path: data.badge_example.yaml
+
+tabs.6:
+  name: State Fields
+  type: list
+  items:
+    - name: Examples
+      type: item
+      fields:
+        - State Example 1: data.state.state1
+          type: state
+        - State Example 2: data.state.state2
+          type: state
+          text_color: green.500
+        - State Example 3: data.state.state3
+          type: state
+          icon_image: ic_error-filled
+        - State Example 4: data.state.state4
+          type: state
+          icon_image: ic_arrow-up-bold
+          text_color: yellow.500
+        - State Example 4: data.state.state4
+          type: state
+          icon_image: ic_arrow-up-bold
+          icon_color: blue.500
+          text_color: yellow.500
+    - name: Data
+      type: raw
+      root_path: data.state_example.data
+    - name: Yaml
+      type: raw
+      root_path: data.state_example.yaml
+
+tabs.7:
+  name: More Fields
+  type: list
+  items:
+    - name: Examples
+      type: item
+      fields:
+        - State Example 1: data.more.more1.button
           type: more
-          popup_key: data.more.code
-          popup_name: "TEST Sample"
+          popup_name: Popup Example 1
+          popup_key: data.more.more1.code
           popup_type: raw
+        - State Example 2: data.more.more2.button
+          type: more
+          popup_name: Popup Example 2
+          popup_key: data.more.more2.data
+          popup_type: simple-table
+          popup_fields:
+            - Name: name
+            - Type: type
+            - State: state
+              type: enum
+              enums:
+                - RUNNING: green.500
+                - STOPPED: red.500
+        - State Example 3: data.more.more3.button
+          type: more
+          popup_name: Popup Example 3
+          popup_key: data.more.more3.data
+          popup_type: item
+          popup_fields:
+              - Key: key
+              - Value: value
+              - Kind: type
+                type: state
+                icon_image: ic_arrow-up-bold
+    - name: Data
+      type: raw
+      root_path: data.more_example.data
+    - name: Yaml
+      type: raw
+      root_path: data.more_example.yaml

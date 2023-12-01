@@ -1,0 +1,38 @@
+search:
+  fields:
+    - Field ID: data.field
+    - Text Field: data.text_example.text1
+      type: text
+    - State Field: data.state
+      type: state
+      icon_image: ic_arrow-up-bold
+
+table:
+  sort:
+    key: data.field
+    desc: true
+  fields:
+    - Field ID: data.field
+    - Text Field: data.text.text1
+      type: text
+    - Enum Field: data.enum.enum1
+      type: enum
+      enums:
+        - RUNNING: green.500
+        - STOPPED: red.500
+    - State Field: data.state.state1
+      type: state
+      icon_image: ic_arrow-up-bold
+    - Badge Field: data.badge.badge1
+      type: badge
+      outline_color: yellow.500
+      shape: ROUND
+    - Dict Field: data.dict
+      type: dict
+    - Datetime Field: data.datetime.datetime1
+      type: datetime
+      source_type: iso8601
+    - Size Field: data.size
+      type: size
+      display_unit: GB
+      source_unit: GB

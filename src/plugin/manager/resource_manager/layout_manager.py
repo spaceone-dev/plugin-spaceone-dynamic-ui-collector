@@ -1,21 +1,24 @@
 import logging
-from spaceone.core.manager import BaseManager
 from spaceone.inventory.plugin.collector.lib import *
-from ..connector.field_connector import FieldConnector
+from plugin.connector.layout_connector import LayoutConnector
+from plugin.manager.resource_manager.base import ResourceManager
 
-_LOGGER = logging.getLogger("cloudforet")
+_LOGGER = logging.getLogger("spaceone")
 
 
-class FieldManager(BaseManager):
+class LayoutManager(ResourceManager):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         self.cloud_service_group = "DynamicUI"
-        self.cloud_service_type = "Field"
+        self.cloud_service_type = "Layout"
         self.provider = "spaceone_company"
-        self.metadata_path = "plugin/metadata/dynamic_ui/field.yaml"
+        self.metadata_path = "metadata/dynamic_ui/layout.yaml"
 
     def collect_resources(self, options, secret_data, schema):
+        _LOGGER.debug(
+            f"[collect_resources] collect Layout resources (options: {options})"
+        )
         try:
             yield from self.collect_cloud_service_type(options, secret_data, schema)
             yield from self.collect_cloud_service(options, secret_data, schema)
@@ -44,15 +47,15 @@ class FieldManager(BaseManager):
         )
 
     def collect_cloud_service(self, options, secret_data, schema):
-        field_connector = FieldConnector()
-        field_items = field_connector.list_fields()
-        for field in field_items:
+        layout_connector = LayoutConnector()
+        layout_items = layout_connector.list_data()
+        for layout in layout_items:
             cloud_service = make_cloud_service(
-                name=field["name"],
+                name=layout["name"],
                 cloud_service_type=self.cloud_service_type,
                 cloud_service_group=self.cloud_service_group,
                 provider=self.provider,
-                data=field,
+                data=layout,
             )
             yield make_response(
                 cloud_service=cloud_service,

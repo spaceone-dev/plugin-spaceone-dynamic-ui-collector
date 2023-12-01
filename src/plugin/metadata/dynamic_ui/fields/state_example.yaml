@@ -1,0 +1,18 @@
+fields:
+  - State Example 1: data.state.state1
+    type: state
+  - State Example 2: data.state.state2
+    type: state
+    text_color: green.500
+  - State Example 3: data.state.state3
+    type: state
+    icon_image: ic_error-filled
+  - State Example 4: data.state.state4
+    type: state
+    icon_image: ic_arrow-up-bold
+    text_color: yellow.500
+  - State Example 4: data.state.state4
+    type: state
+    icon_image: ic_arrow-up-bold
+    icon_color: blue.500
+    text_color: yellow.500

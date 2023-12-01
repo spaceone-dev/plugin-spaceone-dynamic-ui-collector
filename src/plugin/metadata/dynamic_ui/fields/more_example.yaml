@@ -1,0 +1,30 @@
+fields:
+  - State Example: data.more.more1.button
+    type: more
+    popup_name: Popup Example 1
+    popup_key: data.more.more1.code
+    popup_type: raw
+  - State Example: data.more.more2.button
+    type: more
+    popup_name: Popup Example 2
+    popup_key: data.more.more2.data
+    popup_type: simple-table
+    popup_fields:
+      - Name: name
+      - Type: type
+      - State: state
+        type: enum
+        enums:
+          - RUNNING: green.500
+          - STOPPED: red.500
+  - State Example: data.more.more3.button
+    type: more
+    popup_name: Popup Example 3
+    popup_key: data.more.more3.data
+    popup_type: item
+    popup_fields:
+        - Key: key
+        - Value: value
+        - Kind: type
+          type: state
+          icon_image: ic_arrow-up-bold

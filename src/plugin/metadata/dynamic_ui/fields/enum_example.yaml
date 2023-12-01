@@ -1,0 +1,30 @@
+fields:
+  - Enum Example 1: data.enum.enum1
+    type: enum
+    enums:
+      - RUNNING: green.500
+      - STOPPED: red.500
+      - PAUSED: yellow.500
+  - name: Enum Example 2
+    key: data.enum.enum2
+    type: enum
+    enums:
+      - RUNNING: green.500
+      - STOPPED: red.500
+        type: badge
+        shape: SQUARE
+        background_color: gray.500
+      - PAUSED: yellow.500
+        icon_image: ic_arrow-up-bold
+        type: state
+  - Enum Example 3: data.enum.enum3
+    type: enum
+    enums:
+      - RUNNING: green.500
+      - STOPPED: red.500
+        type: badge
+        shape: SQUARE
+        background_color: gray.500
+      - PAUSED: yellow.500
+        icon_image: ic_arrow-up-bold
+        type: state

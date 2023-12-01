@@ -1,0 +1,3 @@
+fields:
+  - Text Example 1: data.dict
+    type: dict

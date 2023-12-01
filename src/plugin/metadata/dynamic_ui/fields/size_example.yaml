@@ -1,0 +1,9 @@
+fields:
+  - Size Example 1: data.size.size1
+    type: size
+    display_unit: GB
+    source_unit: GB
+  - Size Example 2: data.size.size2
+    type: size
+    display_unit: MB
+    source_unit: GB

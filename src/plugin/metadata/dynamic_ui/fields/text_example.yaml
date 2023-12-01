@@ -1,0 +1,7 @@
+fields:
+  - Text Example 1: data.text.text1
+  - Text Example 2: data.text.text2
+    type: text
+  - name: Text Example 3
+    key: data.text.text3
+    type: text
