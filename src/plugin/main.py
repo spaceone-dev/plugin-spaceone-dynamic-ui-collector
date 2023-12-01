@@ -1,7 +1,7 @@
 import logging
 
 from spaceone.inventory.plugin.collector.lib.server import CollectorPluginServer
-from plugin.manager.field_manager import FieldManager
+from plugin.manager.resource_manager import ResourceManager
 
 _LOGGER = logging.getLogger("cloudforet")
 
@@ -19,8 +19,12 @@ def collector_collect(params: dict) -> dict:
     secret_data = params["secret_data"]
     schema = params.get("schema")
 
-    field_manager = FieldManager()
-    return field_manager.collect_resources(options, secret_data, schema)
+    resource_mgrs = ResourceManager.list_managers()
+    for manager in resource_mgrs:
+        results = manager().collect_resources(options, secret_data, schema)
+
+        for result in results:
+            yield result
 
 
 def _create_options_schema():
@@ -36,23 +40,3 @@ def _create_options_schema():
             }
         },
     }
-
-
-@app.route("Job.get_tasks")
-def job_get_tasks(params: dict) -> dict:
-    """Get job tasks
-
-    Args:
-        params (JobGetTaskRequest): {
-            'options': 'dict',      # Required
-            'secret_data': 'dict',  # Required
-            'domain_id': 'str'
-        }
-
-    Returns:
-        TasksResponse: {
-            'tasks': 'list'
-        }
-
-    """
-    return {"tasks": []}

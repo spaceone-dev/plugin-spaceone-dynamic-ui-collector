@@ -1,0 +1,22 @@
+fields:
+  - Badge Example 1: data.badge.badge1
+    type: badge
+  - Badge Example 2: data.badge.badge2
+    type: badge
+    outline_color: yellow.500
+  - Badge Example 3: data.badge.badge3
+    type: badge
+    outline_color: blue.500
+    shape: SQUARE
+  - Badge Example 4: data.badge.badge4
+    type: badge
+    text_color: blue.500
+  - Badge Example 5: data.badge.badge5
+    type: badge
+    background_color: blue.500
+    text_color: yellow.500
+  - Badge Example 6: data.badge.badge6
+    type: badge
+    outline_color: blue.500
+    text_color: yellow.500
+    shape: SQUARE

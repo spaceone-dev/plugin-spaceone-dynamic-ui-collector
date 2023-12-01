@@ -1,0 +1,384 @@
+---
+match_rules:
+  '1':
+  - name
+  - reference.resource_id
+  - account
+  - provider
+resource:
+  group: DynamicUI
+  is_major: true
+  is_primary: true
+  labels: []
+  metadata:
+    view:
+      search:
+      - key: data.field
+        name: Field ID
+        type: text
+      - key: data.text
+        name: Text Field
+        type: text
+      - key: data.state
+        name: State Field
+        options:
+          icon:
+            image: ic_arrow-up-bold
+        type: state
+      sub_data:
+        layouts:
+        - name: Tap 1
+          options:
+            layouts:
+            - name: ''
+              options:
+                fields:
+                - key: data.field
+                  name: Field ID
+                  type: text
+                - key: data.text
+                  name: Text Field
+                  type: text
+                - key: data.state
+                  name: State Field
+                  options:
+                    icon:
+                      image: ic_arrow-up-bold
+                  type: state
+                - key: data.badge
+                  name: Badge Field
+                  options:
+                    outline_color: yellow.500
+                    shape: ROUND
+                  type: badge
+                - key: data.dict
+                  name: Dict Field
+                  type: dict
+                - key: data.datetime
+                  name: Datetime Field
+                  options:
+                    display_format: '%Y-%m-%d %H:%M:%S'
+                    source_format: '%Y-%m-%d %H:%M:%S'
+                    source_type: iso8601
+                  type: datetime
+                - key: data.image
+                  name: Image Field
+                  options:
+                    height: '100'
+                    image_url: https://img.freepik.com/premium-photo/wonderful-scenery-background-image_792335-10.jpg
+                    width: '100'
+                  type: image
+                - key: data.enum
+                  name: Enum Field
+                  options:
+                    RUNNING:
+                      options:
+                        outline_color: green.500
+                      type: badge
+                    STOPPED:
+                      options:
+                        outline_color: red.500
+                      type: badge
+                  type: enum
+                - key: data.size
+                  name: Size Field
+                  options:
+                    display_unit: GB
+                    source_unit: GB
+                  type: size
+                - key: data.progress
+                  name: Progress Field
+                  options:
+                    unit: '10'
+                  type: progress
+                - key: data.display.button
+                  name: More Field
+                  options:
+                    layout:
+                      name: TEST Sample
+                      options:
+                        layout:
+                          type: raw
+                      type: popup
+                    sub_key: data.more.code
+                  type: more
+              type: item
+          type: list
+        - name: Tap 2
+          options:
+            layouts:
+            - name: Dynamic View 1
+              options:
+                fields:
+                - key: data.field
+                  name: Field ID
+                  type: text
+                - key: data.text
+                  name: Text Field
+                  type: text
+                - key: data.state
+                  name: State Field
+                  options:
+                    icon:
+                      image: ic_arrow-up-bold
+                  type: state
+                - key: data.badge
+                  name: Badge Field
+                  options:
+                    outline_color: yellow.500
+                    shape: ROUND
+                  type: badge
+                - key: data.dict
+                  name: Dict Field
+                  type: dict
+              type: item
+            - name: Dynamic View 2
+              options:
+                fields:
+                - key: data.datetime
+                  name: Datetime Field
+                  options:
+                    display_format: '%Y-%m-%d %H:%M:%S'
+                    source_format: '%Y-%m-%d %H:%M:%S'
+                    source_type: iso8601
+                  type: datetime
+                - key: data.image
+                  name: Image Field
+                  options:
+                    height: '100'
+                    image_url: https://img.freepik.com/premium-photo/wonderful-scenery-background-image_792335-10.jpg
+                    width: '100'
+                  type: image
+                - key: data.enum
+                  name: Enum Field
+                  options:
+                    RUNNING:
+                      options:
+                        outline_color: green.500
+                      type: badge
+                    STOPPED:
+                      options:
+                        outline_color: red.500
+                      type: badge
+                  type: enum
+                - key: data.size
+                  name: Size Field
+                  options:
+                    display_unit: GB
+                    source_unit: GB
+                  type: size
+                - key: data.progress
+                  name: Progress Field
+                  options:
+                    unit: '10'
+                  type: progress
+                - key: data.display.button
+                  name: More Field
+                  options:
+                    layout:
+                      name: TEST Sample
+                      options:
+                        layout:
+                          type: raw
+                      type: popup
+                    sub_key: data.more.code
+                  type: more
+              type: item
+          type: list
+        - name: Tap 3
+          options:
+            layouts:
+            - name: Dynamic View 1
+              options:
+                fields:
+                - key: data.state
+                  name: State Field1
+                  options:
+                    icon:
+                      image: ic_arrow-up-bold
+                  type: state
+                - key: data.state
+                  name: State Field2
+                  options:
+                    icon:
+                      color: green.500
+                      image: ic_arrow-up-bold
+                  type: state
+                - key: data.state
+                  name: State Field3
+                  options:
+                    icon:
+                      image: ic_arrow-up-bold
+                  type: state
+                - key: data.state
+                  name: State Field4
+                  options:
+                    text_color: green.500
+                  type: state
+                - key: data.state1
+                  name: State Field5
+                  options:
+                    icon:
+                      color: green.500
+                      image: ic_arrow-up-bold
+                    text_color: yellow.500
+                  type: state
+              type: item
+            - name: Dynamic View 2
+              options:
+                fields:
+                - key: data.badge
+                  name: Badge Field1
+                  type: badge
+                - key: data.badge
+                  name: Badge Field2
+                  options:
+                    outline_color: yellow.500
+                    shape: SQUARE
+                  type: badge
+                - key: data.badge
+                  name: Badge Field3
+                  options:
+                    background_color: gray.500
+                    shape: ROUND
+                  type: badge
+                - key: data.badge
+                  name: Badge Field4
+                  options:
+                    background_color: gray.500
+                    outline_color: yellow.500
+                    shape: ROUND
+                    text_color: green.500
+                  type: badge
+                - key: data.badge
+                  name: Badge Field5
+                  options:
+                    shape: SQUARE
+                    text_color: green.500
+                  type: badge
+              type: item
+            - name: Dynamic View 3
+              options:
+                fields:
+                - key: data.datetime
+                  name: Datetime Field
+                  options:
+                    display_format: '%Y-%m-%d %H:%M:%S'
+                    source_format: '%Y-%m-%d %H:%M:%S'
+                    source_type: iso8601
+                  type: datetime
+                - key: data.image
+                  name: Image Field
+                  options:
+                    height: '100'
+                    image_url: https://img.freepik.com/premium-photo/wonderful-scenery-background-image_792335-10.jpg
+                    width: '100'
+                  type: image
+                - key: data.enum
+                  name: Enum Field
+                  options:
+                    RUNNING:
+                      options:
+                        outline_color: green.500
+                      type: badge
+                    STOPPED:
+                      options:
+                        outline_color: red.500
+                      type: badge
+                  type: enum
+                - key: data.size
+                  name: Size Field
+                  options:
+                    display_unit: GB
+                    source_unit: GB
+                  type: size
+                - key: data.progress
+                  name: Progress Field
+                  options:
+                    unit: '10'
+                  type: progress
+                - key: data.display.button
+                  name: More Field
+                  options:
+                    layout:
+                      name: TEST Sample
+                      options:
+                        layout:
+                          type: raw
+                      type: popup
+                    sub_key: data.more.code
+                  type: more
+              type: simple-table
+          type: list
+      table:
+        layout:
+          name: Main Table
+          options:
+            default_sort:
+              desc: true
+              key: data.field
+            fields:
+            - key: data.field
+              name: Field ID
+              type: text
+            - key: data.text
+              name: Text Field
+              type: text
+            - key: data.state
+              name: State Field
+              options:
+                icon:
+                  image: ic_arrow-up-bold
+              type: state
+            - key: data.badge
+              name: Badge Field
+              options:
+                outline_color: yellow.500
+                shape: ROUND
+              type: badge
+            - key: data.dict
+              name: Dict Field
+              type: dict
+            - key: data.datetime
+              name: Datetime Field
+              options:
+                source_type: iso8601
+              type: datetime
+            - key: data.image
+              name: Image Field
+              options:
+                height: '100'
+                image_url: https://img.freepik.com/premium-photo/wonderful-scenery-background-image_792335-10.jpg
+                width: '100'
+              type: image
+            - key: data.enum
+              name: Enum Field
+              options:
+                RUNNING:
+                  options:
+                    outline_color: green.500
+                  type: badge
+                STOPPED:
+                  options:
+                    outline_color: red.500
+                  type: badge
+              type: enum
+            - key: data.size
+              name: Size Field
+              options:
+                display_unit: GB
+                source_unit: GB
+              type: size
+            - key: data.progress
+              name: Progress Field
+              options:
+                unit: '10'
+              type: progress
+          type: query-search-table
+  name: Field
+  provider: spaceone_company
+  service_code: null
+  tags: {}
+resource_type: inventory.CloudServiceType
+state: SUCCESS
+
