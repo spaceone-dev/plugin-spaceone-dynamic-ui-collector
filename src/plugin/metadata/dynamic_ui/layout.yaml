@@ -36,3 +36,136 @@ table:
       type: size
       display_unit: GB
       source_unit: GB
+
+tabs.0:
+  name: Simple Table Layout
+  items:
+    - name: Example
+      type: simple-table
+      root_path: data.simple_table
+      fields:
+        - Name: name
+        - Type: type
+          type: badge
+        - State: state
+          type: enum
+          enums:
+            - RUNNING: green.500
+            - STOPPED: red.500
+            - PAUSED: yellow.500
+    - name: Data
+      type: raw
+      root_path: data.simple_table_example.data
+    - name: Yaml
+      type: raw
+      root_path: data.simple_table_example.yaml
+
+tabs.1:
+  name: Query Search Table Layout
+  items:
+    - name: Example
+      type: query-search-table
+      root_path: data.query_search_table
+      fields:
+        - Name: name
+        - Type: type
+          type: badge
+        - State: state
+          type: enum
+          enums:
+            - RUNNING: green.500
+            - STOPPED: red.500
+            - PAUSED: yellow.500
+    - name: Data
+      type: raw
+      root_path: data.query_search_table_example.data
+    - name: Yaml
+      type: raw
+      root_path: data.query_search_table_example.yaml
+
+tabs.2:
+  name: Table Layout
+  items:
+    - name: Example
+      type: table
+      root_path: data.table
+      fields:
+        - Name: name
+        - Type: type
+          type: badge
+        - State: state
+          type: enum
+          enums:
+            - RUNNING: green.500
+            - STOPPED: red.500
+            - PAUSED: yellow.500
+    - name: Data
+      type: raw
+      root_path: data.table_example.data
+    - name: Yaml
+      type: raw
+      root_path: data.table_example.yaml
+
+tabs.3:
+  name: Item Layout
+  items:
+    - name: Example
+      type: item
+      fields:
+        - Field ID: data.item.field_id
+        - State: data.item.state
+          type: enum
+          enums:
+            - RUNNING: green.500
+            - STOPPED: red.500
+            - PAUSED: yellow.500
+        - Size: data.item.size
+          type: size
+          display_unit: GB
+          source_unit: GB
+    - name: Data
+      type: raw
+      root_path: data.item_example.data
+    - name: Yaml
+      type: raw
+      root_path: data.item_example.yaml
+
+tabs.4:
+  name: Raw Layout
+  items:
+    - name: Example
+      type: raw
+      root_path: data.raw
+    - name: Data
+      type: raw
+      root_path: data.raw_example.data
+    - name: Yaml
+      type: raw
+      root_path: data.raw_example.yaml
+
+
+tabs.5:
+  name: HTML Layout
+  items:
+    - name: Example
+      type: html
+      root_path: data.html
+    - name: Data
+      type: raw
+      root_path: data.html_example.data
+    - name: Yaml
+      type: raw
+      root_path: data.html_example.yaml
+
+tabs.6:
+  name: Markdown Layout
+  items:
+    - name: Example
+      type: markdown
+      root_path: data.markdown
+    - name: Data
+      type: raw
+      root_path: data.markdown_example.data
+    - name: Yaml
+      type: raw
+      root_path: data.markdown_example.yaml

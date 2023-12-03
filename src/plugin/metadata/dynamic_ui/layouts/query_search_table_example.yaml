@@ -1,0 +1,16 @@
+tabs.1:
+  name: Query Search Table Layout
+  items:
+    - name: Example
+      type: query-search-table
+      root_path: data.query_search_table
+      fields:
+        - Name: name
+        - Type: type
+          type: badge
+        - State: state
+          type: enum
+          enums:
+            - RUNNING: green.500
+            - STOPPED: red.500
+            - PAUSED: yellow.500

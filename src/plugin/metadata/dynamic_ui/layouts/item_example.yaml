@@ -1,0 +1,17 @@
+tabs.3:
+  name: Item Layout
+  items:
+    - name: Example
+      type: item
+      fields:
+        - Field ID: data.item.field_id
+        - State: data.item.state
+          type: enum
+          enums:
+            - RUNNING: green.500
+            - STOPPED: red.500
+            - PAUSED: yellow.500
+        - Size: data.item.size
+          type: size
+          display_unit: GB
+          source_unit: GB

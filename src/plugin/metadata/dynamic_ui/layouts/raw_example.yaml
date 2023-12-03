@@ -1,0 +1,6 @@
+tabs.4:
+  name: Raw Layout
+  items:
+    - name: Example
+      type: raw
+      root_path: data.code
