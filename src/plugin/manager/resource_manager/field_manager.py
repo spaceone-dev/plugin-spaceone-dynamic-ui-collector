@@ -1,7 +1,4 @@
-import os
 import logging
-from spaceone.core.utils import dump_yaml, load_yaml_from_file
-from spaceone.core import config
 from spaceone.inventory.plugin.collector.lib import *
 from plugin.connector.field_connector import FieldConnector
 from plugin.manager.resource_manager.base import ResourceManager
@@ -45,7 +42,9 @@ class FieldManager(ResourceManager):
 
         yield make_response(
             cloud_service_type=cloud_service_type,
-            match_keys=[["name", "reference.resource_id", "account", "provider"]],
+            match_keys=[
+                ["name", "reference.resource_id", "account", "provider", "group"]
+            ],
             resource_type="inventory.CloudServiceType",
         )
 
@@ -53,7 +52,7 @@ class FieldManager(ResourceManager):
         field_connector = FieldConnector()
         field_items = field_connector.list_data()
         for field in field_items:
-            field = self.set_data_and_yaml(field)
+            field = self.set_data_and_yaml(field, "fields")
             cloud_service = make_cloud_service(
                 name=field["name"],
                 cloud_service_type=self.cloud_service_type,
@@ -63,24 +62,13 @@ class FieldManager(ResourceManager):
             )
             yield make_response(
                 cloud_service=cloud_service,
-                match_keys=[["name", "reference.resource_id", "account", "provider"]],
+                match_keys=[
+                    [
+                        "name",
+                        "reference.resource_id",
+                        "account",
+                        "provider",
+                        "cloud_service_type",
+                    ]
+                ],
             )
-
-    @staticmethod
-    def set_data_and_yaml(field):
-        project_path = __import__(config.get_package()).__path__[0]
-        file_path = os.path.join(project_path, "metadata", "dynamic_ui", "fields")
-
-        for file in os.listdir(file_path):
-            if file.endswith(".yaml") or file.endswith(".yml"):
-                field_type, _ = file.split("_")
-
-                field[f"{field_type}_example"] = {
-                    "data": {
-                        "data": {f"{field_type}": field.get(field_type, {})},
-                    },
-                    "yaml": dump_yaml(
-                        load_yaml_from_file(os.path.join(file_path, file))
-                    ),
-                }
-        return field

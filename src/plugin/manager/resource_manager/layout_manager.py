@@ -42,7 +42,9 @@ class LayoutManager(ResourceManager):
 
         yield make_response(
             cloud_service_type=cloud_service_type,
-            match_keys=[["name", "reference.resource_id", "account", "provider"]],
+            match_keys=[
+                ["name", "reference.resource_id", "account", "provider", "group"]
+            ],
             resource_type="inventory.CloudServiceType",
         )
 
@@ -50,6 +52,7 @@ class LayoutManager(ResourceManager):
         layout_connector = LayoutConnector()
         layout_items = layout_connector.list_data()
         for layout in layout_items:
+            layout = self.set_data_and_yaml(layout, "layouts")
             cloud_service = make_cloud_service(
                 name=layout["name"],
                 cloud_service_type=self.cloud_service_type,
@@ -59,5 +62,13 @@ class LayoutManager(ResourceManager):
             )
             yield make_response(
                 cloud_service=cloud_service,
-                match_keys=[["name", "reference.resource_id", "account", "provider"]],
+                match_keys=[
+                    [
+                        "name",
+                        "reference.resource_id",
+                        "account",
+                        "provider",
+                        "cloud_service_type",
+                    ]
+                ],
             )

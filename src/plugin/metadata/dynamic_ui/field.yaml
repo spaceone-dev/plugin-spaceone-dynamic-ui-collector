@@ -44,7 +44,6 @@ table:
 
 tabs.0:
   name: Text Fields
-  type: list
   items:
     - name: Examples
       type: item
@@ -64,7 +63,6 @@ tabs.0:
 
 tabs.1:
   name: Enum Fields
-  type: list
   items:
     - name: Examples
       type: item
@@ -107,7 +105,6 @@ tabs.1:
 
 tabs.2:
   name: Dict Fields
-  type: list
   items:
     - name: Examples
       type: item
@@ -123,7 +120,6 @@ tabs.2:
 
 tabs.3:
   name: Size Fields
-  type: list
   items:
     - name: Examples
       type: item
@@ -145,7 +141,6 @@ tabs.3:
 
 tabs.4:
   name: Datetime Fields
-  type: list
   items:
     - name: Examples
       type: item
@@ -169,7 +164,6 @@ tabs.4:
 
 tabs.5:
   name: Badge Fields
-  type: list
   items:
     - name: Examples
       type: item
@@ -204,7 +198,6 @@ tabs.5:
 
 tabs.6:
   name: State Fields
-  type: list
   items:
     - name: Examples
       type: item
@@ -235,7 +228,6 @@ tabs.6:
 
 tabs.7:
   name: More Fields
-  type: list
   items:
     - name: Examples
       type: item

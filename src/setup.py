@@ -32,7 +32,11 @@ setup(
     packages=find_packages(),
     install_requires=["spaceone-core", "spaceone-api", "spaceone-inventory"],
     package_data={
-        "plugin": ["metadata/dynamic_ui/*.yaml", "metadata/dynamic_ui/fields/*.yaml"]
+        "plugin": [
+            "metadata/dynamic_ui/*.yaml",
+            "metadata/dynamic_ui/fields/*.yaml",
+            "metadata/dynamic_ui/layouts/*.yaml",
+        ]
     },
     zip_safe=False,
 )

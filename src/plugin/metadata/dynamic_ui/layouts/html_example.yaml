@@ -1,0 +1,6 @@
+tabs.5:
+  name: HTML Layout
+  items:
+    - name: Example
+      type: html
+      root_path: data.html

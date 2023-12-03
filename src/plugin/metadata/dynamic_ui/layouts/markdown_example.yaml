@@ -1,0 +1,6 @@
+tabs.6:
+  name: Markdown Layout
+  items:
+    - name: Example
+      type: markdown
+      root_path: data.markdown

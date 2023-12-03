@@ -1,0 +1,16 @@
+tabs.2:
+  name: Table Layout
+  items:
+    - name: Example
+      type: table
+      root_path: data.table
+      fields:
+        - Name: name
+        - Type: type
+          type: badge
+        - State: state
+          type: enum
+          enums:
+            - RUNNING: green.500
+            - STOPPED: red.500
+            - PAUSED: yellow.500
