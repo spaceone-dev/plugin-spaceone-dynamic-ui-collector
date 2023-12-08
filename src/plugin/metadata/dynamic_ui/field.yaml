@@ -43,6 +43,317 @@ table:
       source_unit: GB
 
 tabs.0:
+  name: Color Book
+  items:
+    - name: Black & White
+      type: item
+      fields:
+        - Black: data.color.black
+          type: state
+          text_color: black
+        - White: data.color.white
+          type: state
+          text_color: white
+    - name: Gray
+      type: item
+      fields:
+        - gray: data.color.gray
+          type: state
+          text_color: gray
+        - gray.100: data.color.gray.100
+          type: state
+          text_color: gray.100
+        - gray.200: data.color.gray.200
+          type: state
+          text_color: gray.200
+        - gray.300: data.color.gray.300
+          type: state
+          text_color: gray.300
+        - gray.400: data.color.gray.400
+          type: state
+          text_color: gray.400
+        - gray.500: data.color.gray.500
+          type: state
+          text_color: gray.500
+        - gray.600: data.color.gray.600
+          type: state
+          text_color: gray.600
+        - gray.700: data.color.gray.700
+          type: state
+          text_color: gray.700
+        - gray.800: data.color.gray.800
+          type: state
+          text_color: gray.800
+        - gray.900: data.color.gray.900
+          type: state
+          text_color: gray.900
+    - name: Red
+      type: item
+      fields:
+        - red: data.color.red
+          type: state
+          text_color: red
+        - red.100: data.color.red.100
+          type: state
+          text_color: red.100
+        - red.200: data.color.red.200
+          type: state
+          text_color: red.200
+        - red.300: data.color.red.300
+          type: state
+          text_color: red.300
+        - red.400: data.color.red.400
+          type: state
+          text_color: red.400
+        - red.500: data.color.red.500
+          type: state
+          text_color: red.500
+        - red.600: data.color.red.600
+          type: state
+          text_color: red.600
+        - red.700: data.color.red.700
+          type: state
+          text_color: red.700
+        - red.800: data.color.red.800
+          type: state
+          text_color: red.800
+        - red.900: data.color.red.900
+          type: state
+          text_color: red.900
+    - name: Coral
+      type: item
+      fields:
+        - coral: data.color.coral
+          type: state
+          text_color: coral
+        - coral.100: data.color.coral.100
+          type: state
+          text_color: coral.100
+        - coral.200: data.color.coral.200
+          type: state
+          text_color: coral.200
+        - coral.300: data.color.coral.300
+          type: state
+          text_color: coral.300
+        - coral.400: data.color.coral.400
+          type: state
+          text_color: coral.400
+        - coral.500: data.color.coral.500
+          type: state
+          text_color: coral.500
+        - coral.600: data.color.coral.600
+          type: state
+          text_color: coral.600
+        - coral.700: data.color.coral.700
+          type: state
+          text_color: coral.700
+        - coral.800: data.color.coral.800
+          type: state
+          text_color: coral.800
+        - coral.900: data.color.coral.900
+          type: state
+          text_color: coral.900
+    - name: Yellow
+      type: item
+      fields:
+        - yellow: data.color.yellow
+          type: state
+          text_color: yellow
+        - yellow.100: data.color.yellow.100
+          type: state
+          text_color: yellow.100
+        - yellow.200: data.color.yellow.200
+          type: state
+          text_color: yellow.200
+        - yellow.300: data.color.yellow.300
+          type: state
+          text_color: yellow.300
+        - yellow.400: data.color.yellow.400
+          type: state
+          text_color: yellow.400
+        - yellow.500: data.color.yellow.500
+          type: state
+          text_color: yellow.500
+        - yellow.600: data.color.yellow.600
+          type: state
+          text_color: yellow.600
+        - yellow.700: data.color.yellow.700
+          type: state
+          text_color: yellow.700
+        - yellow.800: data.color.yellow.800
+          type: state
+          text_color: yellow.800
+        - yellow.900: data.color.yellow.900
+          type: state
+          text_color: yellow.900
+    - name: Green
+      type: item
+      fields:
+        - green: data.color.green
+          type: state
+          text_color: green
+        - green.100: data.color.green.100
+          type: state
+          text_color: green.100
+        - green.200: data.color.green.200
+          type: state
+          text_color: green.200
+        - green.300: data.color.green.300
+          type: state
+          text_color: green.300
+        - green.400: data.color.green.400
+          type: state
+          text_color: green.400
+        - green.500: data.color.green.500
+          type: state
+          text_color: green.500
+        - green.600: data.color.green.600
+          type: state
+          text_color: green.600
+        - green.700: data.color.green.700
+          type: state
+          text_color: green.700
+        - green.800: data.color.green.800
+          type: state
+          text_color: green.800
+        - green.900: data.color.green.900
+          type: state
+          text_color: green.900
+    - name: Blue
+      type: item
+      fields:
+        - blue: data.color.blue
+          type: state
+          text_color: blue
+        - blue.100: data.color.blue.100
+          type: state
+          text_color: blue.100
+        - blue.200: data.color.blue.200
+          type: state
+          text_color: blue.200
+        - blue.300: data.color.blue.300
+          type: state
+          text_color: blue.300
+        - blue.400: data.color.blue.400
+          type: state
+          text_color: blue.400
+        - blue.500: data.color.blue.500
+          type: state
+          text_color: blue.500
+        - blue.600: data.color.blue.600
+          type: state
+          text_color: blue.600
+        - blue.700: data.color.blue.700
+          type: state
+          text_color: blue.700
+        - blue.800: data.color.blue.800
+          type: state
+          text_color: blue.800
+        - blue.900: data.color.blue.900
+          type: state
+          text_color: blue.900
+    - name: Violet
+      type: item
+      fields:
+        - violet: data.color.violet
+          type: state
+          text_color: violet
+        - violet.100: data.color.violet.100
+          type: state
+          text_color: violet.100
+        - violet.200: data.color.violet.200
+          type: state
+          text_color: violet.200
+        - violet.300: data.color.violet.300
+          type: state
+          text_color: violet.300
+        - violet.400: data.color.violet.400
+          type: state
+          text_color: violet.400
+        - violet.500: data.color.violet.500
+          type: state
+          text_color: violet.500
+        - violet.600: data.color.violet.600
+          type: state
+          text_color: violet.600
+        - violet.700: data.color.violet.700
+          type: state
+          text_color: violet.700
+        - violet.800: data.color.violet.800
+          type: state
+          text_color: violet.800
+        - violet.900: data.color.violet.900
+          type: state
+          text_color: violet.900
+    - name: Peacock
+      type: item
+      fields:
+        - peacock: data.color.peacock
+          type: state
+          text_color: peacock
+        - peacock.100: data.color.peacock.100
+          type: state
+          text_color: peacock.100
+        - peacock.200: data.color.peacock.200
+          type: state
+          text_color: peacock.200
+        - peacock.300: data.color.peacock.300
+          type: state
+          text_color: peacock.300
+        - peacock.400: data.color.peacock.400
+          type: state
+          text_color: peacock.400
+        - peacock.500: data.color.peacock.500
+          type: state
+          text_color: peacock.500
+        - peacock.600: data.color.peacock.600
+          type: state
+          text_color: peacock.600
+        - peacock.700: data.color.peacock.700
+          type: state
+          text_color: peacock.700
+        - peacock.800: data.color.peacock.800
+          type: state
+          text_color: peacock.800
+        - peacock.900: data.color.peacock.900
+          type: state
+          text_color: peacock.900
+    - name: Indigo
+      type: item
+      fields:
+        - indigo: data.color.indigo
+          type: state
+          text_color: indigo
+        - indigo.100: data.color.indigo.100
+          type: state
+          text_color: indigo.100
+        - indigo.200: data.color.indigo.200
+          type: state
+          text_color: indigo.200
+        - indigo.300: data.color.indigo.300
+          type: state
+          text_color: indigo.300
+        - indigo.400: data.color.indigo.400
+          type: state
+          text_color: indigo.400
+        - indigo.500: data.color.indigo.500
+          type: state
+          text_color: indigo.500
+        - indigo.600: data.color.indigo.600
+          type: state
+          text_color: indigo.600
+        - indigo.700: data.color.indigo.700
+          type: state
+          text_color: indigo.700
+        - indigo.800: data.color.indigo.800
+          type: state
+          text_color: indigo.800
+        - indigo.900: data.color.indigo.900
+          type: state
+          text_color: indigo.900
+
+
+tabs.1:
   name: Text Fields
   items:
     - name: Examples
@@ -61,7 +372,7 @@ tabs.0:
       type: raw
       root_path: data.text_example.yaml
 
-tabs.1:
+tabs.2:
   name: Enum Fields
   items:
     - name: Examples
@@ -103,7 +414,7 @@ tabs.1:
       type: raw
       root_path: data.enum_example.yaml
 
-tabs.2:
+tabs.3:
   name: Dict Fields
   items:
     - name: Examples
@@ -118,7 +429,7 @@ tabs.2:
       type: raw
       root_path: data.dict_example.yaml
 
-tabs.3:
+tabs.4:
   name: Size Fields
   items:
     - name: Examples
@@ -139,7 +450,7 @@ tabs.3:
       type: raw
       root_path: data.size_example.yaml
 
-tabs.4:
+tabs.5:
   name: Datetime Fields
   items:
     - name: Examples
@@ -162,7 +473,7 @@ tabs.4:
       type: raw
       root_path: data.datetime_example.yaml
 
-tabs.5:
+tabs.6:
   name: Badge Fields
   items:
     - name: Examples
@@ -196,7 +507,7 @@ tabs.5:
       type: raw
       root_path: data.badge_example.yaml
 
-tabs.6:
+tabs.7:
   name: State Fields
   items:
     - name: Examples
@@ -226,7 +537,7 @@ tabs.6:
       type: raw
       root_path: data.state_example.yaml
 
-tabs.7:
+tabs.8:
   name: More Fields
   items:
     - name: Examples
