@@ -13,6 +13,11 @@ def collector_init(params: dict) -> dict:
     return {"metadata": {"options_schema": _create_options_schema()}}
 
 
+@app.route("Collector.verify")
+def collector_verify(params: dict) -> dict:
+    pass
+
+
 @app.route("Collector.collect")
 def collector_collect(params: dict) -> dict:
     options = params["options"]
