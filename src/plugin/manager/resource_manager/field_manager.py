@@ -12,7 +12,7 @@ class FieldManager(ResourceManager):
 
         self.cloud_service_group = "DynamicUI"
         self.cloud_service_type = "Field"
-        self.provider = "spaceone_company"
+        self.provider = "spaceone"
         self.metadata_path = "metadata/dynamic_ui/field.yaml"
 
     def collect_resources(self, options, secret_data, schema):
