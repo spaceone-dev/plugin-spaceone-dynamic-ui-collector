@@ -32,6 +32,11 @@ def collector_collect(params: dict) -> dict:
             yield result
 
 
+@app.route("Job.get_tasks")
+def job_get_tasks(params: dict) -> dict:
+    pass
+
+
 def _create_options_schema():
     return {
         "required": ["items"],
